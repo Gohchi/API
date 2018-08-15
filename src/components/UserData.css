@@ -1,0 +1,31 @@
+
+.user-data {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  display: inline;
+  float: right;
+  margin: 20px 40px;
+}
+
+  .user-data li {
+    float: right;
+  }
+  .user-data div {
+    padding: 7px;
+  }
+  .user-data .name{
+    margin: 7px;
+  }
+  .user-data .points {
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--bg-color);
+  }
+  .user-data .points div {    
+    float: left;
+  }
+img.aerolab {  
+  float: left;
+  margin: 20px 40px;
+}
