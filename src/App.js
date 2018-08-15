@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import UserData from "./components/UserData";
 // import logo from './logo.svg';
-import coin from './image/icon/coin.svg';
-import aerolab from './image/icon/aerolab-logo.svg';
 import './App.css';
 
 function getData(type){
@@ -45,22 +44,11 @@ class App extends Component {
   // }
   render() {
     if(this.state.userData) {
-      let data = this.state.userData;
       return (
         <div className="container">
-          <div className="inlineblock">
-            <ul className="user-data">
-              <li>
-                <div className="points">
-                  <div>{data.points}</div>
-                  <img src={coin} alt="points" />
-                </div>
-              </li>
-              <li><div className="name">{data.name}</div></li>
-            </ul>
-            <img src={aerolab} className="aerolab" alt="aerolab" />    
-          </div>
+          <UserData name={this.state.userData.name} points={this.state.userData.points}/>
           <div className="inlineblock header">
+            <div className="text">Electronics</div>
           </div>
           
         </div>
