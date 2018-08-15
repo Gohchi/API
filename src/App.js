@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserData from "./components/UserData";
+import Header from "./components/Header";
 // import logo from './logo.svg';
 import './App.css';
 
@@ -47,10 +48,7 @@ class App extends Component {
       return (
         <div className="container">
           <UserData name={this.state.userData.name} points={this.state.userData.points}/>
-          <div className="inlineblock header">
-            <div className="text">Electronics</div>
-          </div>
-          
+          <Header />
         </div>
       )
     }
