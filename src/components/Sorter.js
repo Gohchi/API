@@ -3,14 +3,23 @@ import './Sorter.css';
 
 class Sorter extends Component {
   render() {
-    let active = "MostRecent";
+    let sortBy = this.props.sortBy;
     return (            
       <div className="sorter">
         <div className="tbar-item">Sort by:</div>
         <ul className="sorters">
-          <li><div className={active==="HighestPrice"?"active":""} >Highest price</div></li>
-          <li><div className={active==="LowestPrice"?"active":""} >Lowest price</div></li>
-          <li><div className={active==="MostRecent"?"active":""} >Most recent</div></li>
+          <li><div
+            className={sortBy==="HighestPrice"?"active":""}
+            onClick={() => this.props.sortList("HighestPrice")}
+          >Highest price</div></li>
+          <li><div
+            className={sortBy==="LowestPrice"?"active":""}
+            onClick={() => this.props.sortList("LowestPrice")}
+          >Lowest price</div></li>
+          <li><div
+            className={sortBy==="MostRecent"?"active":""}
+            onClick={() => this.props.sortList("MostRecent")}
+          >Most recent</div></li>
         </ul>
       </div>
     );

@@ -4,58 +4,6 @@
 .list .body{
   margin: 40px 120px;
 }
-.list .product{
-  display: inline-block;
-}
-.product {
-  background:#ffffff;
-  box-shadow:2px 2px 4px 0 rgba(0,0,0,0.10);
-  margin: 15px;
-  padding: 30px;
-  position: relative;
-}
-.product img {
-  width: 156px;
-  height: 156px;
-}
-  .separator {
-    background:#d9d9d9;
-    width:228px;
-    height:1px;
-  }
-  .info {
-    text-align: left;
-  }
-  .info h3 {
-    /* font-family: SourceSansPro-Regular; */
-    font-size:16px;
-    color:#a3a3a3;
-    letter-spacing:-0.04px;
-    text-align:left;
-  }
-  .info h2 {
-    /* font-family: SourceSansPro-Regular; */
-    font-size:18px;
-    color:#616161;
-    letter-spacing:-0.04px;
-    text-align:left;
-    margin: 0;
-  }
-  .buy {
-    background: url(../image/icon/buy-blue.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; 
-    width:42px;
-    height:42px;
-    border-radius:100%;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  .buy:hover {
-    background: url(../image/icon/buy-white.svg);
-  }
 div.list .body .tbar div {
   display: inline-block;
   font-size: 24px;
