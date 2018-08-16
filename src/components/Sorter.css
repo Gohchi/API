@@ -1,0 +1,35 @@
+.sorter {
+  color:#a3a3a3;
+}
+.sorters {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  display: inline;
+  float: right;
+}
+
+  .sorters li {
+    float: right;
+  }
+  .sorters div {
+    padding: 7px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--bg-color);
+    margin: 0 10px;
+    line-height: 30px;
+    cursor: pointer;
+  }
+  .sorters div.active {
+    background-color: #0ad4fa;
+    color:#ffffff;
+  }
+  .sorters div:hover{
+    background-color: #56e3ff;
+    color:#ffffff;
+  }
+  .sorters div:active{
+    background-color: #00b4d8;
+    color:#ffffff;
+  }
