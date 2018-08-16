@@ -49,3 +49,23 @@ div.test {
   /* width: 80px; */
   border: 1px solid;
 }
+
+.button {  
+  padding: 7px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: #a3a3a3;
+  margin: 0 10px;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.button:hover {
+  background-color: var(--bg-color);
+  color: #ffffff;
+}
+.button:active {
+  background-color: #0ad4fa;
+  color: #ffffff;
+}

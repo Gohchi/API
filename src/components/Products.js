@@ -26,8 +26,11 @@ class Products extends Component {
               onMouseOver={() => this.showMask(product._id)}
             >
               <div className={"mask" + active} >
-                <div>{product.cost}</div>
-                <div className="img"></div>
+                <div className="container">
+                  <div>{product.cost}</div>
+                  <div className="img"></div>
+                  <div className="button">Redeem now</div>
+                </div>
               </div>
               <div className={"buy"+ active} ></div>
               <div>
