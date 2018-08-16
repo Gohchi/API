@@ -1,45 +1,29 @@
 import React, { Component } from 'react';
 import Pager from "./Pager";
 import Sorter from "./Sorter";
+import Products from "./Products";
 import './List.css';
 
 
 class List extends Component {
   render() {
+    let prevPage = <div className="page-changer" onClick={() => this.props.prevPage()} > &lt; </div>
     return (
       <div className="inlineblock list">
         <div className="body">
           <div className="tbar">
             <Pager showing={this.props.showing} total={this.props.pager.total} />
             <div> | </div>
-            <Sorter sortList={this.props.sortList} />
-            <div className="page-changer"> &lt; </div>
-            <div className="page-changer"> &gt; </div>
+            <Sorter
+              sortBy={this.props.pager.sort}
+              sortList={this.props.sortList} />
+            {this.props.pager.current > 1 ? prevPage : null}
+            <div
+              className="page-changer"
+              onClick={() => this.props.nextPage()}
+            > &gt; </div>
           </div>
-          <div className="product-list">
-            {this.props.products.map(product => {
-                /*
-                  onClick={() => this.props.subscribeToRoom(room.id)}
-                */
-                return (
-                    <div
-                      key={product.id}
-                      className="product"
-                    >
-                      <div className="buy"></div>
-                      <div>
-                        <img src={product.img.url} alt={product.name} />
-                      </div>
-                      <div className="separator"></div>
-                      <div className="info">
-                        {/* <h2>{product.cost}</h2> */}
-                        <h3>{product.category}</h3>
-                        <h2>{product.name}</h2>
-                      </div>
-                    </div>
-                )
-            })}
-          </div>
+          <Products products={this.props.products} />
           <div className="bbar test">
             <Pager showing={this.props.showing} total={this.props.pager.total} />
           </div>
