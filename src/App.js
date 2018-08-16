@@ -21,7 +21,8 @@ function getData(type){
         "cost": 200,
         "category": "Indumentaria",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/Alienware13-x2.png",
+          "url": "https://www.atoz2u.com/image/cache/catalog/IT%20/Dell/Laptop/dell-alienware-17-r5-ca17-1-200x200.jpg",
+          // "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/Alienware13-x2.png",
           "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/Alienware13-x2.png"
         }
       },
@@ -31,8 +32,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -41,8 +42,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -51,8 +52,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -61,8 +62,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -71,8 +72,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -81,8 +82,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -91,8 +92,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -101,8 +102,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -111,8 +112,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       },
       {
@@ -121,8 +122,8 @@ function getData(type){
         "cost": 200,
         "category": "Accesorios",
         "img": {
-          "url": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png",
-          "hdUrl": "https://coding-challenge-api-huojtyfzzb.now.sh/images/SamsungTabS2-x1.png"
+          "url": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725",
+          "hdUrl": "https://cdn.shopify.com/s/files/1/0101/2522/products/apple_iphone_7_plata.jpg?v=1515597725"
         }
       }
     ];
