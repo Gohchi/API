@@ -58,13 +58,23 @@ class List extends Component {
         })
         break;
       default: // case 'MostRecent':
-        products.sort(function(a, b){
-          if (a._id > b._id)
-            return -1 
-          if (a._id < b._id)
-            return 1
-          return 0
-        })
+        if(this.props.historyMode) {
+          products.sort(function(a, b){
+            if (a.createDate > b.createDate)
+              return -1 
+            if (a.createDate < b.createDate)
+              return 1
+            return 0
+          })
+        } else {
+          products.sort(function(a, b){
+            if (a._id > b._id)
+              return -1 
+            if (a._id < b._id)
+              return 1
+            return 0
+          })
+        }
         break;
     }
     this.setState({
