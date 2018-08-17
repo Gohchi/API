@@ -11,11 +11,10 @@ class Tbar extends Component {
           <Pager showing={this.props.showing} total={this.props.pager.total} />
           <div className="separator"></div>
           <Sorter
-            sortBy={this.props.pager.sort}
             sortList={this.props.sortList}
             prevPage={this.props.prevPage}
             nextPage={this.props.nextPage}
-            currentPage={this.props.pager.current}
+            pager={this.props.pager}
           />
         </div>
       </div>

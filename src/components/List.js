@@ -24,7 +24,6 @@ class List extends Component {
       }
     }
     this.sortList = this.sortList.bind(this)
-    this.reconfigurePager = this.reconfigurePager.bind(this)
     this.getCatalogue = this.getCatalogue.bind(this)
     this.getHistory = this.getHistory.bind(this)
     this.prevPage = this.prevPage.bind(this)
@@ -77,15 +76,6 @@ class List extends Component {
     })
     this.props.updateProducts(products);
   }
-  reconfigurePager(products){
-    console.log(products.length)
-    this.setState({
-      pager: Object.assign({}, this.pager, {
-        total: products.length,
-        current: 1
-      })
-    })
-  }
   getCatalogue(){
     fetch(host + '/products', {  
       method: 'GET',
@@ -133,32 +123,15 @@ class List extends Component {
           return 1
         return 0
       })
-      // this.setState({
-      //   products
-      // })
+      this.setState({
+        pager: Object.assign({}, this.state.pager, {
+          total: products.length,
+          current: 1
+        })
+      })
       this.props.updateProducts(products);
-      // this.reconfigurePager(products)
     })
   }
-  // componentDidUpdate(){
-  //   console.log('did updating');
-  // }
-  // componentWillUpdate(){
-  //   console.log('will updating');
-  //   console.log('mode:', this.props.historyMode, ' prevMode:', this.state.prevMode);
-  //   if(this.props.historyMode !== this.state.prevMode)
-  //     this.setState({
-  //       products: null,
-  //       prevMode: this.props.historyMode
-  //     })
-  // }
-  // componentWillMount(){
-  //   console.log("historyMode:", this.props.historyMode)
-  //   if(this.props.historyMode)
-  //     this.getHistory()
-  //   else
-  //     this.getCatalogue()
-  // }
   render() {
     let products = this.props.products ? getProductsByPager(this.props.products, this.state.pager) : null
     let showing = products ? (this.state.pager.current-1)*this.state.pager.size+products.length : 0
