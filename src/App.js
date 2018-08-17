@@ -10,7 +10,7 @@ function getData(type){
     case 'userData': return {
       "id": "5a03638052fd231590d04eb5",
       "name": "John Kite",
-      "points": 2000,
+      "points": 200,
       "redeemHistory": [],
       "createDate": new Date(1510171520852)
     }
@@ -436,6 +436,7 @@ class App extends Component {
             prevPage={() => this.prevPage()}
             nextPage={() => this.nextPage()}
             sortList={this.sortList}
+            points={this.state.userData.points}
           />
         </div>
       )

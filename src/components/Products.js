@@ -18,7 +18,13 @@ class Products extends Component {
     return (
       <div className="product-list">
         {this.props.products.map(product => {
-          let active = this.state.showMaskFor === product._id ? " active" : "";
+          let diff = product.cost - this.props.points;
+          let active = this.state.showMaskFor === product._id && diff <= 0 ? " active" : "";
+          let available = diff <= 0 ?
+            <div className={"icon"+ active} ></div>
+            : <div className="icon-disabled" >You need {diff}
+                <div className="coin"></div>
+              </div>;
           return (
             <div
               key={product._id}
@@ -32,7 +38,7 @@ class Products extends Component {
                   <div className="button">Redeem now</div>
                 </div>
               </div>
-              <div className={"buy"+ active} ></div>
+              {available}
               <div>
                 <img src={product.img.url} alt={product.name} />
               </div>

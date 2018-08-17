@@ -17,7 +17,10 @@ class List extends Component {
             pager={this.props.pager}
             sortList={this.props.sortList}
           />
-          <Products products={this.props.products} />
+          <Products
+            products={this.props.products}
+            points={this.props.points}
+          />
           <div className="bbar test">
             <Pager showing={this.props.showing} total={this.props.pager.total} />
           </div>
