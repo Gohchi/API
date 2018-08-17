@@ -34,9 +34,13 @@ class UserData extends Component {
           <li onClick={() => this.addPoints(1000)} >
             <div className="points"><div>Add 1000 points</div></div>
           </li>
-          <li onClick={() => this.props.showHistory()} >
-            <div className="points"><div>Check history</div></div>
+          {this.props.historyMode ?
+          <li onClick={() => this.props.showHistory(true)} >
+            <div className="points"><div>Check catalogue</div></div>
           </li>
+          : <li onClick={() => this.props.showHistory()} >
+              <div className="points"><div>Check history</div></div>
+            </li>}
         </ul>
         <ul className="user-data">
           <li>

@@ -4,7 +4,7 @@ import './Sorter.css';
 
 class Sorter extends Component {
   render() {
-    let sortBy = this.props.sortBy;
+    let sortBy = this.props.pager.sort;
     return (            
       <div className="sorter">
         <div className="tbar-item">Sort by:</div>
@@ -13,7 +13,7 @@ class Sorter extends Component {
             <PageChanger
               prevPage={this.props.prevPage}
               nextPage={this.props.nextPage}
-              currentPage={this.props.currentPage}
+              pager={this.props.pager}
             />
           </li>
           <li><div

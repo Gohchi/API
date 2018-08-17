@@ -15,6 +15,10 @@ class Products extends Component {
       showMaskFor: id
     })
   }
+  componentWillMount(){
+    if(!this.props.products)
+      this.props.getCatalogue()
+  }
   render() {
     if(this.props.products) {
       return (
@@ -61,7 +65,7 @@ class Products extends Component {
     } else {
       return (
         <div className="product-list">
-          <div>Loading products...</div>        
+          <div>Loading catalgue...</div>        
           <img src={logo} className="App-logo" alt="logo" />
         </div>
       )
