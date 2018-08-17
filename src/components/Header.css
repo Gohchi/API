@@ -1,17 +1,19 @@
-div.header {
+.header {
   height: 300px;
   background: url(../image/header-x1.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; 
+  background-position: right; 
+  /* background-position: right 10px top; */
   position: relative;
 }
-div.header .text{
+.header .text{
   /* height: 300px; */
   color: white;
   font-weight: bold;
   font-size: 42px;
   bottom: 40px;
-  left: 130px;
+  /* left: 130px; */
   position: absolute;
+  margin: 10%;
 }
