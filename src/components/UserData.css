@@ -21,6 +21,7 @@
     height: 30px;
     border-radius: 15px;
     background-color: var(--bg-color);
+    cursor: pointer;
   }
   .user-data .points:hover {
     background-color: #00b4d8;
@@ -63,6 +64,7 @@ img.aerolab {
     height: 30px;
     border-radius: 15px;
     background-color: var(--bg-color);
+    cursor: pointer;
   }
   .menu .points:hover {
     background-color: #00b4d8;

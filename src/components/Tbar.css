@@ -6,12 +6,6 @@
   /* float: left;
   clear: left; */
 }
-  .tbar .container {
-    /* display: block;
-    float: left;
-    position: relative;
-    right: 50%; */
-  }
   .tbar div {
     display: inline-block;
     font-size: 24px;

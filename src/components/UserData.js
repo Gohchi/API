@@ -25,16 +25,16 @@ class UserData extends Component {
     return (            
       <div className="inlineblock">
         <ul className={"menu" + (this.state.hidden ? " hidden" : "")}>
-          <li onClick={() => this.addPoints(7500)}>
+          <li onClick={() => this.addPoints(7500)} >
             <div className="points"><div>Add 7500 points</div></div>
           </li>
-          <li onClick={() => this.addPoints(5000)}>
+          <li onClick={() => this.addPoints(5000)} >
             <div className="points"><div>Add 5000 points</div></div>
           </li>
-          <li onClick={() => this.addPoints(1000)}>
+          <li onClick={() => this.addPoints(1000)} >
             <div className="points"><div>Add 1000 points</div></div>
           </li>
-          <li>
+          <li onClick={() => this.props.showHistory()} >
             <div className="points"><div>Check history</div></div>
           </li>
         </ul>

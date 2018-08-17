@@ -29,11 +29,13 @@ class App extends Component {
       },
       backendMessage: null,
       reinitpopup: false,
-      hideLoading: true
+      hideLoading: true,
+      historyMode: true
     }
     this.sortList = this.sortList.bind(this)
     this.redeemProduct = this.redeemProduct.bind(this)
     this.addPoints = this.addPoints.bind(this)
+    this.showHistory = this.showHistory.bind(this)
   }
   prevPage(){
     if(this.state.pager.current === 1) return;
@@ -48,6 +50,11 @@ class App extends Component {
       pager: Object.assign({}, this.state.pager, {
         current: this.state.pager.current+1
       })
+    })
+  }
+  showHistory(){
+    this.setState({
+      historyMode: true
     })
   }
   sortList(sortBy){
@@ -217,6 +224,7 @@ class App extends Component {
             name={this.state.userData.name}
             points={this.state.userData.points}
             addPoints={this.addPoints}
+            showHistory={this.showHistory}
           />
           <Header />
           <List
@@ -228,6 +236,7 @@ class App extends Component {
             sortList={this.sortList}
             points={this.state.userData.points}
             redeemProduct={this.redeemProduct}
+            historyMode={this.state.historyMode}
           />
         </div>
       )
