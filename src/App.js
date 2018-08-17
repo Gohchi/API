@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UserData from "./components/UserData";
 import Header from "./components/Header";
 import List from "./components/List";
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 
 function getData(type){
@@ -357,7 +357,9 @@ class App extends Component {
         size: 8,
         sort: 'MostRecent'
       },
-      backendMessage: null
+      backendMessage: null,
+      reinitpopup: false,
+      hideLoading: true
     }
     this.sortList = this.sortList.bind(this)
     this.redeemProduct = this.redeemProduct.bind(this)
@@ -410,6 +412,10 @@ class App extends Component {
     })
   }
   redeemProduct(productId){
+    this.setState({
+      reinitpopup: true,
+      hideLoading: false
+    })
     fetch('https://aerolab-challenge.now.sh/redeem', {  
       method: 'POST',
       body: JSON.stringify({
@@ -425,7 +431,8 @@ class App extends Component {
       .then(response => {
           this.getUserData();
           this.setState({
-            backendMessage: response.message
+            backendMessage: response.message,
+            reinitpopup: false
           })
       })
   }
@@ -442,10 +449,15 @@ class App extends Component {
     .then(userData => {
         this.setState({
             userData,
+            hideLoading: true
         })
     })
   }
   addPoints(amount){
+    this.setState({
+      reinitpopup: true,
+      hideLoading: false
+    })
     fetch('https://aerolab-challenge.now.sh/user/points', {  
       method: 'POST',
       body: JSON.stringify({
@@ -463,7 +475,9 @@ class App extends Component {
             backendMessage: response.message,
             userData: Object.assign({}, this.state.userData, {
                 "points": response["New Points"]
-            })            
+            }),
+            reinitpopup: false,
+            hideLoading: true          
           })
       })
   }
@@ -490,7 +504,8 @@ class App extends Component {
                 userData,
                 products,
                 pager: Object.assign({}, this.state.pager, {
-                total: this.state.products.length
+                total: this.state.products.length,
+                hideLoading: true
             })
         })
       })
@@ -501,8 +516,11 @@ class App extends Component {
       let showing = (this.state.pager.current-1)*this.state.pager.size+products.length
       return (
         <div className="container">
-          <div className="message">
+          <div className={"message" + (this.state.reinitpopup?"-hidden":"")}>
             {this.state.backendMessage}
+          </div>
+          <div className={"loading" + (this.state.hideLoading?"-hidden":"")}>
+            <div className="spinner"></div>
           </div>
           <UserData
             name={this.state.userData.name}
@@ -525,7 +543,8 @@ class App extends Component {
     }
     return (
       <div className="container">
-        Loading...
+        <div>Loading...</div>
+        <img src={logo} className="App-logo" alt="logo" />
       </div>
     )
   }
