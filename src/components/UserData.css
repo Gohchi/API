@@ -22,6 +22,14 @@
     border-radius: 15px;
     background-color: var(--bg-color);
   }
+  .user-data .points:hover {
+    background-color: #00b4d8;
+    color:#ffffff;
+  }
+  .user-data .points:active {
+    background-color: #0ad4fa;
+    color: #ffffff;
+  }
   .user-data .points div {    
     float: left;
   }
@@ -29,3 +37,41 @@ img.aerolab {
   float: left;
   margin: 20px 40px;
 }
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  display: inline;
+  float: right;
+  margin: 20px 40px;
+}
+  .menu.hidden {
+    display: none;
+  }
+  .menu li {
+    float: right;
+    margin: 0 5px;
+  }
+  .menu div {
+    padding: 7px;
+  }
+  .menu .name{
+    margin: 7px;
+  }
+  .menu .points {
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--bg-color);
+  }
+  .menu .points:hover {
+    background-color: #00b4d8;
+    color:#ffffff;
+  }
+  .menu .points:active {
+    background-color: #0ad4fa;
+    color: #ffffff;
+  }
+  .menu .points div {    
+    float: left;
+  }

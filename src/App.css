@@ -69,3 +69,40 @@ div.test {
   background-color: #0ad4fa;
   color: #ffffff;
 }
+body, html {
+  height: 100%;
+}
+.message {
+  display: inline-block;
+  text-align: center;
+  zoom: 1;
+  position: fixed;
+  width: 95%;
+  z-index: 100;
+  color: black;
+  font-size: 30px;
+  border-radius: 20px;
+  /* Opera */
+  animation: hideMessage 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes hideMessage {
+  /* You could think of as "step 1" */
+  80% {
+    background-color: rgba(7, 255, 243, 0.439);
+    color: black;
+  }
+  /* You could think of as "step 2" */
+  99% {
+    background-color: rgba(231, 249, 255, 0)ff70;
+    color: rgba(0, 0, 0, 0);
+    width: 95%;
+    font-size: 30px;
+  }
+  100%{
+    background-color: rgba(231, 249, 255, 0)ff70;
+    color: rgba(0, 0, 0, 0);
+    width: 0;
+    font-size: 0;
+  }
+}

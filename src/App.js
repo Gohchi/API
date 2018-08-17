@@ -361,6 +361,7 @@ class App extends Component {
     }
     this.sortList = this.sortList.bind(this)
     this.redeemProduct = this.redeemProduct.bind(this)
+    this.addPoints = this.addPoints.bind(this)
   }
   prevPage(){
     if(this.state.pager.current === 1) return;
@@ -422,8 +423,47 @@ class App extends Component {
     })
       .then(o => o.json())
       .then(response => {
+          this.getUserData();
           this.setState({
             backendMessage: response.message
+          })
+      })
+  }
+  getUserData(){
+    fetch('https://aerolab-challenge.now.sh/user/me', {  
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjczNzk0ZjQ4ODVhMzAwNTg3MzYxMGUiLCJpYXQiOjE1MzQyOTQzNTF9.7AcaaniL-byI3YUtGXiONH5DKWaqcc5hst1IxHJfs4I'
+      }
+    })
+    .then(o => o.json())
+    .then(userData => {
+        this.setState({
+            userData,
+        })
+    })
+  }
+  addPoints(amount){
+    fetch('https://aerolab-challenge.now.sh/user/points', {  
+      method: 'POST',
+      body: JSON.stringify({
+        amount
+      }),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjczNzk0ZjQ4ODVhMzAwNTg3MzYxMGUiLCJpYXQiOjE1MzQyOTQzNTF9.7AcaaniL-byI3YUtGXiONH5DKWaqcc5hst1IxHJfs4I'
+      }
+    })
+      .then(o => o.json())
+      .then(response => {
+          this.setState({
+            backendMessage: response.message,
+            userData: Object.assign({}, this.state.userData, {
+                "points": response["New Points"]
+            })            
           })
       })
   }
@@ -438,10 +478,6 @@ class App extends Component {
     })
       .then(o => o.json())
       .then(userData => {
-        // console.log(userData)
-        // this.setState({
-        //   userData
-        // })
         let products = this.state.products.slice()
         products.sort(function(a, b){
             if (a._id > b._id)
@@ -465,7 +501,14 @@ class App extends Component {
       let showing = (this.state.pager.current-1)*this.state.pager.size+products.length
       return (
         <div className="container">
-          <UserData name={this.state.userData.name} points={this.state.userData.points}/>
+          <div className="message">
+            {this.state.backendMessage}
+          </div>
+          <UserData
+            name={this.state.userData.name}
+            points={this.state.userData.points}
+            addPoints={this.addPoints}
+          />
           <Header />
           <List
             products={products}
@@ -489,22 +532,3 @@ class App extends Component {
 }
 
 export default App;
-
-  // componentWillMount(){
-  //   if(!process.env.API_TOKEN) return;
-  //   fetch('https://aerolab-challenge.now.sh/user/me', {  
-  //     method: 'GET',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json',
-  //       'Authorization': 'Bearer ' + process.env.API_TOKEN
-  //     }
-  //   })
-  //     .then(o => o.json())
-  //     .then(userData => {
-  //       console.log(userData)
-  //       this.setState({
-  //         userData
-  //       })
-  //     })
-  // }
