@@ -1,37 +1,12 @@
-.list{
-  background:#f9f9f9;
+.inlineblock.list{
+  background-color:#f9f9f9;
 }
 .list .body{
-  margin: 40px 120px;
+  margin: 15px 5%;
 }
-div.list .body .tbar div {
-  display: inline-block;
-  font-size: 24px;
-}
-.tbar-item {
-  margin: 30px 40px;
-}
+
 div.list .body .bbar div {
   display: inline-block;
   float: left;
   font-size: 24px;
-}
-
-.page-changer {
-  border:1px solid #d9d9d9;
-  width:46px;
-  height:46px;
-  border-radius:100%;
-  line-height: 45px;
-  color: #dedede;
-  cursor: pointer;
-  margin: 0 5px;
-}
-.page-changer:hover{
-  background-color: #cfcfcf;
-  color:#858585;
-}
-.page-changer:active{
-  background-color: #9c9c9c;
-  color:#858585;
 }
