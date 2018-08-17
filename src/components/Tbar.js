@@ -5,20 +5,18 @@ import './Tbar.css';
 
 class Tbar extends Component {
   render() {
-    let prevPage = <div className="page-changer" onClick={() => this.props.prevPage()} > &lt; </div>
     return (
       <div className="tbar">
         <div className="container">
           <Pager showing={this.props.showing} total={this.props.pager.total} />
-          <div> | </div>
+          <div className="separator"></div>
           <Sorter
             sortBy={this.props.pager.sort}
-            sortList={this.props.sortList} />
-          {this.props.pager.current > 1 ? prevPage : null}
-          <div
-            className="page-changer"
-            onClick={() => this.props.nextPage()}
-          > &gt; </div>
+            sortList={this.props.sortList}
+            prevPage={this.props.prevPage}
+            nextPage={this.props.nextPage}
+            currentPage={this.props.pager.current}
+          />
         </div>
       </div>
     );

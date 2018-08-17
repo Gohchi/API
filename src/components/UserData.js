@@ -12,7 +12,7 @@ class UserData extends Component {
   }
   showMenu(){
     this.setState({
-      hidden: false
+      hidden: !this.state.hidden
     })
   }
   addPoints(amount){

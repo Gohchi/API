@@ -19,21 +19,11 @@
   .tbar .tbar-item {
     margin: 30px 40px;
   }
-  .tbar .page-changer {
-    border:1px solid #d9d9d9;
-    width:46px;
-    height:46px;
-    border-radius:100%;
-    line-height: 45px;
-    color: #dedede;
-    cursor: pointer;
-    margin: 0 5px;
-  }
-  .tbar .page-changer:hover{
-    background-color: #cfcfcf;
-    color:#858585;
-  }
-  .tbar .page-changer:active{
-    background-color: #9c9c9c;
-    color:#858585;
+  
+  .tbar .separator {
+    background: #d9d9d9;
+    height: 55px;
+    width: 1px;
+    position: absolute;
+    top: 35px;
   }
