@@ -2,44 +2,16 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import './Products.css';
 
-const host = 'https://aerolab-challenge.now.sh',
-    token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjczNzk0ZjQ4ODVhMzAwNTg3MzYxMGUiLCJpYXQiOjE1MzQyOTQzNTF9.7AcaaniL-byI3YUtGXiONH5DKWaqcc5hst1IxHJfs4I';
-
 class History extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      products: null
-    }
-  }
   componentWillMount(){
-    fetch(host + '/user/history', {  
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
-      }
-    })
-    .then(o => o.json())
-    .then(products => {
-      products.sort(function(a, b){
-        if (a.createDate > b.createDate)
-          return -1 
-        if (a.createDate < b.createDate)
-          return 1
-        return 0
-      })
-      this.setState({
-        products
-      })
-    })
+    if(!this.props.products)
+      this.props.getHistory()
   }
   render() {
-    if(this.state.products) {
+    if(this.props.products) {
       return (
         <div className="product-list">
-          {this.state.products.map(product => {
+          {this.props.products.map(product => {
             return (
               <div key={product.createDate+product._id} className="product" >
                 <div className="icon-disabled" >You spent {product.cost}
