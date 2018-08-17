@@ -20,6 +20,7 @@ class List extends Component {
           <Products
             products={this.props.products}
             points={this.props.points}
+            redeemProduct={this.props.redeemProduct}
           />
           <div className="bbar test">
             <Pager showing={this.props.showing} total={this.props.pager.total} />

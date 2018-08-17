@@ -35,7 +35,10 @@ class Products extends Component {
                 <div className="container">
                   <div>{product.cost}</div>
                   <div className="img"></div>
-                  <div className="button">Redeem now</div>
+                  <div
+                    className="button"
+                    onClick={() => this.props.redeemProduct(product._id)}
+                  >Redeem now</div>
                 </div>
               </div>
               {available}

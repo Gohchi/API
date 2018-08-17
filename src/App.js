@@ -348,16 +348,19 @@ class App extends Component {
   constructor(props){
     super(props)    
     this.state = {
-      userData: getData('userData'),
+      userData: null,
+    //   userData: getData('userData'),
       products: getData('products'),
       pager: {
         total: 0,
         current: 1,
         size: 8,
         sort: 'MostRecent'
-      }
+      },
+      backendMessage: null
     }
     this.sortList = this.sortList.bind(this)
+    this.redeemProduct = this.redeemProduct.bind(this)
   }
   prevPage(){
     if(this.state.pager.current === 1) return;
@@ -405,21 +408,56 @@ class App extends Component {
       })
     })
   }
-  componentWillMount(){
-    let products = this.state.products.slice()
-    products.sort(function(a, b){
-      if (a._id > b._id)
-        return -1 
-      if (a._id < b._id)
-        return 1
-      return 0
+  redeemProduct(productId){
+    fetch('https://aerolab-challenge.now.sh/redeem', {  
+      method: 'POST',
+      body: JSON.stringify({
+        productId
+      }),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjczNzk0ZjQ4ODVhMzAwNTg3MzYxMGUiLCJpYXQiOjE1MzQyOTQzNTF9.7AcaaniL-byI3YUtGXiONH5DKWaqcc5hst1IxHJfs4I'
+      }
     })
-    this.setState({
-      products: products,
-      pager: Object.assign({}, this.state.pager, {
-        total: this.state.products.length
+      .then(o => o.json())
+      .then(response => {
+          this.setState({
+            backendMessage: response.message
+          })
       })
+  }
+  componentWillMount(){
+    fetch('https://aerolab-challenge.now.sh/user/me', {  
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjczNzk0ZjQ4ODVhMzAwNTg3MzYxMGUiLCJpYXQiOjE1MzQyOTQzNTF9.7AcaaniL-byI3YUtGXiONH5DKWaqcc5hst1IxHJfs4I'
+      }
     })
+      .then(o => o.json())
+      .then(userData => {
+        // console.log(userData)
+        // this.setState({
+        //   userData
+        // })
+        let products = this.state.products.slice()
+        products.sort(function(a, b){
+            if (a._id > b._id)
+                return -1 
+            if (a._id < b._id)
+                return 1
+            return 0
+        })
+        this.setState({
+                userData,
+                products,
+                pager: Object.assign({}, this.state.pager, {
+                total: this.state.products.length
+            })
+        })
+      })
   }
   render() {
     if(this.state.userData) {
@@ -437,6 +475,7 @@ class App extends Component {
             nextPage={() => this.nextPage()}
             sortList={this.sortList}
             points={this.state.userData.points}
+            redeemProduct={this.redeemProduct}
           />
         </div>
       )
