@@ -52,9 +52,10 @@ class App extends Component {
       })
     })
   }
-  showHistory(){
+  showHistory(reverse){
+    console.log(!reverse)
     this.setState({
-      historyMode: true
+      historyMode: !reverse
     })
   }
   sortList(sortBy){
@@ -225,6 +226,7 @@ class App extends Component {
             points={this.state.userData.points}
             addPoints={this.addPoints}
             showHistory={this.showHistory}
+            historyMode={this.state.historyMode}
           />
           <Header />
           <List
