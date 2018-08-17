@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Tbar from "./Tbar";
 // import Pager from "./Pager";
 import Products from "./Products";
+import History from "./History";
 import './List.css';
 
 
@@ -17,11 +18,14 @@ class List extends Component {
             pager={this.props.pager}
             sortList={this.props.sortList}
           />
-          <Products
-            products={this.props.products}
-            points={this.props.points}
-            redeemProduct={this.props.redeemProduct}
-          />
+          {!this.props.historyMode ?
+            <Products
+              products={this.props.products}
+              points={this.props.points}
+              redeemProduct={this.props.redeemProduct}
+            />
+            : <History />
+          }
           {/* <div className="bbar test">
             <Pager showing={this.props.showing} total={this.props.pager.total} />
           </div> */}
