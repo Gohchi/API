@@ -12,7 +12,7 @@
   .sorters li {
     float: right;
   }
-  .sorters div {
+  .sorters .s-button {
     padding: 7px;
     height: 30px;
     border-radius: 15px;
@@ -21,15 +21,15 @@
     line-height: 30px;
     cursor: pointer;
   }
-  .sorters div.active {
+  .sorters .s-button.active {
     background-color: #0ad4fa;
     color:#ffffff;
   }
-  .sorters div:hover{
+  .sorters .s-button:hover{
     background-color: #56e3ff;
     color:#ffffff;
   }
-  .sorters div:active{
+  .sorters .s-button:active{
     background-color: #00b4d8;
     color:#ffffff;
   }

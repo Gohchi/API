@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Tbar from "./Tbar";
-import Pager from "./Pager";
+// import Pager from "./Pager";
 import Products from "./Products";
 import './List.css';
 
@@ -22,9 +22,9 @@ class List extends Component {
             points={this.props.points}
             redeemProduct={this.props.redeemProduct}
           />
-          <div className="bbar test">
+          {/* <div className="bbar test">
             <Pager showing={this.props.showing} total={this.props.pager.total} />
-          </div>
+          </div> */}
         </div>
       </div>
     );
