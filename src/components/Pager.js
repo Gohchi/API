@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Pager extends Component {
-  render() {
-    return (            
-      <div className="tbar-item">
-        {this.props.showing} of {this.props.total} products   
-      </div>
-    );
-  }
+function Pager(props) {
+  return (            
+    <div className="tbar-item">
+      {props.showing} of {props.total} products   
+    </div>
+  )
 }
 
 export default Pager;

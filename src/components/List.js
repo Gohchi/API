@@ -15,7 +15,6 @@ class List extends Component {
   constructor(props){
     super(props)
     this.state = {
-      // products: null,
       pager: {
         total: 0,
         current: 1,
@@ -78,7 +77,6 @@ class List extends Component {
         break;
     }
     this.setState({
-      // products: products,
       pager: Object.assign({}, this.state.pager, {
         current: 1,
         sort: sortBy
@@ -105,7 +103,6 @@ class List extends Component {
         return 0
       })
       this.setState({
-        // products,
         pager: Object.assign({}, this.state.pager, {
             total: products.length
         }),
@@ -159,7 +156,6 @@ class List extends Component {
             <History
               getHistory={this.getHistory}
               products={products}
-            //  reconfigurePager={this.reconfigurePager}
             />
           :
             <Products

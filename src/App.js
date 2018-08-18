@@ -115,17 +115,8 @@ class App extends Component {
     })
     .then(o => o.json())
     .then(userData => {
-      // let products = this.state.products.slice()
-      // products.sort(function(a, b){
-      //     if (a._id > b._id)
-      //         return -1 
-      //     if (a._id < b._id)
-      //         return 1
-      //     return 0
-      // })
       this.setState({
-          userData,
-          // products,
+          userData
       })
     })
   }
