@@ -165,9 +165,6 @@ class List extends Component {
               redeemProduct={this.props.redeemProduct}
             />
           }
-          {/* <div className="bbar test">
-            <Pager showing={this.props.showing} total={this.props.pager.total} />
-          </div> */}
         </div>
       </div>
     );

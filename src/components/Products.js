@@ -53,7 +53,6 @@ class Products extends Component {
                 </div>
                 <div className="separator"></div>
                 <div className="info">
-                  {/* <h2>{product.cost}</h2> */}
                   <h3>{product.category}</h3>
                   <h2>{product.name}</h2>
                 </div>

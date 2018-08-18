@@ -4,16 +4,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right; 
-  /* background-position: right 10px top; */
   position: relative;
 }
 .header .text{
-  /* height: 300px; */
   color: white;
   font-weight: bold;
   font-size: 42px;
   bottom: 40px;
-  /* left: 130px; */
   position: absolute;
   margin: 10%;
 }

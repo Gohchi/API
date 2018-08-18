@@ -26,8 +26,6 @@ body{
   box-shadow: 2px 2px 5px grey;
 }
 div.test {
-	/* position: relative; */
-  /* width: 80px; */
   border: 1px solid;
 }
 
@@ -70,12 +68,10 @@ body, html {
   display: none;
 }
 @keyframes hideMessage {
-  /* You could think of as "step 1" */
   80% {
     background-color: rgba(7, 255, 243, 0.439);
     color: black;
   }
-  /* You could think of as "step 2" */
   99% {
     background-color: rgba(231, 249, 255, 0)ff70;
     color: rgba(0, 0, 0, 0);
