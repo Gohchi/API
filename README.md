@@ -1,3 +1,3 @@
-# React-App
-Hi there!
-Redeem all your points!
+# API
+
+Some random API
